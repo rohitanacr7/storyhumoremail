@@ -10,6 +10,10 @@
       {
         "src": "/send-email-with-referral",
         "dest": "/server.js" 
+      },
+      {
+        "src": "/send-email-with-company",
+        "dest": "/server.js" 
       }
     ]
   }
