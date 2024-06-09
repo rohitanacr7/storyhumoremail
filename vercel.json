@@ -1,20 +1,15 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "server.js", 
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/send-email-with-referral",
-        "dest": "/server.js" 
-      },
-      {
-        "src": "/send-email-with-company",
-        "dest": "/server.js" 
-      }
-    ]
-  }
-  
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/server.js"
+    }
+  ]
+}

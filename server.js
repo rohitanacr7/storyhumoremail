@@ -29,7 +29,7 @@ app.post('/send-email-with-company', async (req, res) => {
 
     try {
         // Render the email template with dynamic data
-        const html = await ejs.renderFile(__dirname + '/email-template.ejs', { name, email, to, subject, message, phoneNo, companyName });
+        const html = await ejs.renderFile(__dirname + '/views/email-template.ejs', { name, email, to, subject, message, phoneNo, companyName });
 
         const mailOptions = {
             from: process.env.EMAIL_USER,
@@ -57,7 +57,7 @@ app.post('/send-email-with-referral', async (req, res) => {
 
     try {
         // Render the email template with dynamic data
-        const html = await ejs.renderFile(__dirname + '/email-template2.ejs', { name, email, to, subject, message, phoneNo, referral });
+        const html = await ejs.renderFile(__dirname + '/views/email-template2.ejs', { name, email, to, subject, message, phoneNo, referral });
 
         const mailOptions = {
             from: process.env.EMAIL_USER,
