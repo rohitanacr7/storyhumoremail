@@ -2,11 +2,16 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
+const cors = require('cors');
 require('dotenv').config(); // Load environment variables from .env file
 
 const app = express();
 const port = process.env.PORT || 3000;
 
+// Enable CORS for all origins
+app.use(cors());
+
+// Middleware to parse JSON bodies
 app.use(bodyParser.json());
 
 // Configure your email transport
@@ -77,6 +82,7 @@ app.post('/send-email-with-referral', async (req, res) => {
     }
 });
 
+// Start the server
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
