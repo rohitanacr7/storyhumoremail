@@ -47,10 +47,10 @@ app.post('/send-email-with-company', async (req, res) => {
         await transporter.sendMail(mailOptions);
 
         console.log('Email sent successfully');
-        res.status(200).send('Email sent successfully');
+        res.status(200).json({ message: 'Email sent successfully' });
     } catch (error) {
         console.error('Error sending email:', error); // Log error
-        res.status(500).send('Error sending email');
+        res.status(500).json({ message: 'Error sending email' });
     }
 });
 
@@ -75,10 +75,10 @@ app.post('/send-email-with-referral', async (req, res) => {
         await transporter.sendMail(mailOptions);
 
         console.log('Email sent successfully');
-        res.status(200).send('Email sent successfully');
+        res.status(200).json({ message: 'Email sent successfully' });
     } catch (error) {
         console.error('Error sending email:', error); // Log error
-        res.status(500).send('Error sending email');
+        res.status(500).json({ message: 'Error sending email' });
     }
 });
 
